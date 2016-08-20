@@ -28,6 +28,10 @@ $(".startButton").on("click", function(){
 		$(".liveTime").html(count);
 	}
 
+	//var answer = $("input[type='radio']:checked");
+
+
+
 });
 
 //done button finishs quiz and displays results

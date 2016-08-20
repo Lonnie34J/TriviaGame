@@ -15,7 +15,7 @@ $(".startButton").on("click", function(){
 //done button finishs quiz and displays results
 $(".doneButton").on("click",function(){
 
-	//$(".quizContent").hide();
+	$(".quizContent").hide();
 	$(".results").show();
 
 })

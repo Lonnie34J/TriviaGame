@@ -37,7 +37,83 @@ $(".startButton").on("click", function(){
 		$(".quizContent").hide();
 		$(".results").show();
 
-		//when the time runs out displays the results page with updated html to reflect user results(will epeat this code 5 times for each radio group)
+		//when the time runs out displays the results page with updated html to reflect user results(will repeat this code 5 times for each radio group)
+
+
+	var q1 = document.forms["quizForm"]["q1"].value;
+	var q2 = document.forms["quizForm"]["q2"].value;
+	var q3 = document.forms["quizForm"]["q3"].value;
+	var q4 = document.forms["quizForm"]["q4"].value;
+	var q5 = document.forms["quizForm"]["q5"].value;
+	var totalQuestions = 6;
+	
+
+	//question 1 result
+
+	for(var i=1; i<totalQuestions; i++){
+
+	if(eval("q"+i)==null || eval("q"+i)==""){
+		unanswered++;
+		newUnanswered= $(".neither");
+		newUnanswered.html(unanswered);
+		
+	}
+	
+	}
+
+	var answers = ["option3","option2","option1","option2","option3"];
+	//Question 1
+	if(q1==answers[0]){
+		correctAnswers++;
+		newCorrect= $(".right");
+		newCorrect.html(correctAnswers);
+	}else if(q1==answers[1] || q1==answers[2] || q1==answers[3] || q1==answers[4]){
+		incorrectAnswers++;
+		newIncorrect= $(".wrong");
+		newIncorrect.html(incorrectAnswers);
+	}
+
+	//Question2	
+	if(q2==answers[1]){
+		correctAnswers++;
+		newCorrect= $(".right");
+		newCorrect.html(correctAnswers);
+	}else if(q2==answers[0] || q2==answers[2] || q2==answers[3] || q2==answers[4]){
+		incorrectAnswers++;
+		newIncorrect= $(".wrong");
+		newIncorrect.html(incorrectAnswers);
+	}
+	//Question3
+	if(q3==answers[2]){
+		correctAnswers++;
+		newCorrect= $(".right");
+		newCorrect.html(correctAnswers);
+	}else if(q3==answers[0] || q3==answers[1] || q3==answers[3] || q3==answers[4]){
+		incorrectAnswers++;
+		newIncorrect= $(".wrong");
+		newIncorrect.html(incorrectAnswers);
+	}
+	//question 4
+	if(q4==answers[3]){
+		correctAnswers++;
+		newCorrect= $(".right");
+		newCorrect.html(correctAnswers);
+	}else if(q4==answers[0] || q4==answers[1] || q4==answers[2] || q4==answers[4]){
+		incorrectAnswers++;
+		newIncorrect= $(".wrong");
+		newIncorrect.html(incorrectAnswers);
+	}
+	//question 5
+	if(q5==answers[4]){
+		correctAnswers++;
+		newCorrect= $(".right");
+		newCorrect.html(correctAnswers);
+	}else if(q5==answers[0] || q5==answers[1] || q5==answers[2] || q5==answers[3]){
+		incorrectAnswers++;
+		newIncorrect= $(".wrong");
+		newIncorrect.html(incorrectAnswers);
+	}
+
 
 	}
 		$(".liveTime").html(count);
@@ -49,35 +125,85 @@ $(".startButton").on("click", function(){
 });
 
 //done button finishs quiz and displays results
-$(".doneButton").on("click",function(){
+$(".doneButton").on("click",function finish(){
 
 	$(".quizContent").hide();
 	$(".results").show();
 
 	//when the done button is clicked reveals the results with updated html(will repeat this 5 code times for each radio button group)
-	var answer= document.getElementById('optionsRadios3');
+	var q1 = document.forms["quizForm"]["q1"].value;
+	var q2 = document.forms["quizForm"]["q2"].value;
+	var q3 = document.forms["quizForm"]["q3"].value;
+	var q4 = document.forms["quizForm"]["q4"].value;
+	var q5 = document.forms["quizForm"]["q5"].value;
+	var totalQuestions = 6;
+	
 
-	var answerOne= document.getElementById("optionsRadios2").checked;
+	//question 1 result
 
-	var answerTwo= document.getElementById("optionsRadios4").checked;
+	for(var i=1; i<totalQuestions; i++){
 
-		if(answer.checked===true) {
-			
-			correctAnswers++;
-			newCorrect= $(".right");
-			newCorrect.html(correctAnswers);
-		}else if(answer.checked===false){
-			unanswered++;
-			newUnanswered= $(".neither");
-			newUnanswered.html(unanswered);
-		}if(answer.checked==answerOne){
-			incorrectAnswers++
-			newIncorrect= $(".wrong");
-			newIncorrect.html(incorrectAnswers);
-		}
-
-
+	if(eval("q"+i)==null || eval("q"+i)==""){
+		unanswered++;
+		newUnanswered= $(".neither");
+		newUnanswered.html(unanswered);
 		
+	}
+	
+	}
+
+	var answers = ["option3","option2","option1","option2","option3"];
+	//Question 1
+	if(q1==answers[0]){
+		correctAnswers++;
+		newCorrect= $(".right");
+		newCorrect.html(correctAnswers);
+	}else if(q1==answers[1] || q1==answers[2] || q1==answers[3] || q1==answers[4]){
+		incorrectAnswers++;
+		newIncorrect= $(".wrong");
+		newIncorrect.html(incorrectAnswers);
+	}
+
+	//Question2	
+	if(q2==answers[1]){
+		correctAnswers++;
+		newCorrect= $(".right");
+		newCorrect.html(correctAnswers);
+	}else if(q2==answers[0] || q2==answers[2] || q2==answers[3] || q2==answers[4]){
+		incorrectAnswers++;
+		newIncorrect= $(".wrong");
+		newIncorrect.html(incorrectAnswers);
+	}
+	//Question3
+	if(q3==answers[2]){
+		correctAnswers++;
+		newCorrect= $(".right");
+		newCorrect.html(correctAnswers);
+	}else if(q3==answers[0] || q3==answers[1] || q3==answers[3] || q3==answers[4]){
+		incorrectAnswers++;
+		newIncorrect= $(".wrong");
+		newIncorrect.html(incorrectAnswers);
+	}
+	//question 4
+	if(q4==answers[3]){
+		correctAnswers++;
+		newCorrect= $(".right");
+		newCorrect.html(correctAnswers);
+	}else if(q4==answers[0] || q4==answers[1] || q4==answers[2] || q4==answers[4]){
+		incorrectAnswers++;
+		newIncorrect= $(".wrong");
+		newIncorrect.html(incorrectAnswers);
+	}
+	//question 5
+	if(q5==answers[4]){
+		correctAnswers++;
+		newCorrect= $(".right");
+		newCorrect.html(correctAnswers);
+	}else if(q5==answers[0] || q5==answers[1] || q5==answers[2] || q5==answers[3]){
+		incorrectAnswers++;
+		newIncorrect= $(".wrong");
+		newIncorrect.html(incorrectAnswers);
+	}
 })
 
 

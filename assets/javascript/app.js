@@ -1,5 +1,18 @@
 $(document).ready(function(){
 
+	//sets the elements on the results page to zero instead of just blank
+	correctAnswers=0;
+	newCorrect= $(".right");
+	newCorrect.html(correctAnswers);
+	
+	incorrectAnswers=0;
+	newIncorrect= $(".wrong");
+	newIncorrect.html(incorrectAnswers);
+
+	unanswered=0
+	newUnanswered= $(".neither");
+	newUnanswered.html(unanswered);
+
 //hides the quiz content when the webpage loads
 $(".quizContent").hide();
 $(".results").hide();
@@ -24,12 +37,13 @@ $(".startButton").on("click", function(){
 		$(".quizContent").hide();
 		$(".results").show();
 
+		//when the time runs out displays the results page with updated html to reflect user results(will epeat this code 5 times for each radio group)
+
 	}
 		$(".liveTime").html(count);
 	}
 
-	//var answer = $("input[type='radio']:checked");
-
+	
 
 
 });
@@ -40,6 +54,30 @@ $(".doneButton").on("click",function(){
 	$(".quizContent").hide();
 	$(".results").show();
 
+	//when the done button is clicked reveals the results with updated html(will repeat this 5 code times for each radio button group)
+	var answer= document.getElementById('optionsRadios3');
+
+	var answerOne= document.getElementById("optionsRadios2").checked;
+
+	var answerTwo= document.getElementById("optionsRadios4").checked;
+
+		if(answer.checked===true) {
+			
+			correctAnswers++;
+			newCorrect= $(".right");
+			newCorrect.html(correctAnswers);
+		}else if(answer.checked===false){
+			unanswered++;
+			newUnanswered= $(".neither");
+			newUnanswered.html(unanswered);
+		}if(answer.checked==answerOne){
+			incorrectAnswers++
+			newIncorrect= $(".wrong");
+			newIncorrect.html(incorrectAnswers);
+		}
+
+
+		
 })
 
 

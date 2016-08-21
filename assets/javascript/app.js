@@ -25,8 +25,8 @@ $(".startButton").on("click", function(){
 	$(".startButton").hide();
 
 	//sets the count for the timer
-	count = 200;
-	counter = setInterval(gameTimer, 200);
+	count = 150;
+	counter = setInterval(gameTimer, 150);
 
 	//runs the timer
 	function gameTimer(){
@@ -37,18 +37,20 @@ $(".startButton").on("click", function(){
 		$(".quizContent").hide();
 		$(".results").show();
 
-		//when the time runs out displays the results page with updated html to reflect user results(will repeat this code 5 times for each radio group)
+//when the time runs out displays the results page with updated html to reflect user results
 
-
+//creates variables for the questions within the quizform 
 	var q1 = document.forms["quizForm"]["q1"].value;
 	var q2 = document.forms["quizForm"]["q2"].value;
 	var q3 = document.forms["quizForm"]["q3"].value;
 	var q4 = document.forms["quizForm"]["q4"].value;
 	var q5 = document.forms["quizForm"]["q5"].value;
+
+//had to set total questions equal to 6 in order to have loop count the correct amount of unanswered questions 
 	var totalQuestions = 6;
 	
 
-	//question 1 result
+//loops through all the question to see if they were answered if left blank add 1 to the unanswered total
 
 	for(var i=1; i<totalQuestions; i++){
 
